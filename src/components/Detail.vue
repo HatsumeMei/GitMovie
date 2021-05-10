@@ -1,7 +1,8 @@
 <template>
   <div>
       <h1>Movie Detail</h1>
-      <p>{{detailObj.title}}</p>
+      <img :src="`https://image.tmdb.org/t/p/w500${detailObj.poster_path}`">
+      <h2>{{detailObj.title}}</h2>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ export default {
         .then ( response =>{
         console.log(response);
         this.detailObj = response.data
+        console.log(response.data.poster_path);
         
     })
     }
